@@ -1,0 +1,27 @@
+<div class="card" style="width: 34rem;">
+ <label> <b>Contact :</b></label>
+  <div class="card" style="width: 30rem;">
+  <p><b>  type : </b>    {{provider.contacts[0].type}}</p>
+    <p><b>country : </b> {{provider.contacts[0].address.country}} </p>
+    <p><b> blocality:</b>{{provider.contacts[0].address.locality}}</p>
+    <p><b> postal_code:</b>{{provider.contacts[0].address.postal_code}}</p>
+    <p> <b>street_address:</b>{{provider.contacts[0].address.street_address}}</p>
+    <p><b> subdivision :</b>{{provider.contacts[0].address.subdivision}}</p>
+    <p> <b>email :</b>{{provider.contacts[0].email}}</p>
+    <p><b> mobile_phone_number:</b> {{provider.contacts[0].mobile_phone_number}}</p>
+  </div>
+  <p *ngFor="let day of provider.opening_days_hours"><b>Opening days hours:</b>
+    {{day.day_of_week}}
+    {{day.hour_periods}}
+  </p>
+  <p><b>Services :</b> 
+    {{provider.services}}
+  </p>
+  <p><b>Is_auto_assignable:</b>
+    {{provider.is_auto_assignable}}
+  </p>
+  <p><b>Rating: </b>
+    {{provider.rating.ranking}}
+  </p>
+</div>
+ <button class="btn btn-primary"  (click)="deleteProvider() ">Supprimer</button>

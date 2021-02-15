@@ -1,0 +1,93 @@
+<div class="container">
+    <form (ngSubmit)="submit()" [formGroup]="providerForm">
+      <fieldset formGroupName="contacts">
+        <legend>Contact</legend>
+        <label class="form-label">
+          Type:
+          <input class="form-control" type="text" formControlName="type">
+        </label>
+  
+        <fieldset formGroupName="address">
+          <legend>Address</legend>
+  
+          <label class="form-label">
+            Street Address:
+            <input class="form-control" type="text" formControlName="streetAddress">
+          </label>
+  
+          <label class="form-label">
+            Subdivision:
+            <input class="form-control" type="text" formControlName="subdivision">
+          </label>
+  
+          <label class="form-label">
+            Postal Code:
+            <input class="form-control" type="number" formControlName="postalCode">
+          </label>
+  
+          <label class="form-label">
+            Locality:
+            <input class="form-control" type="text" formControlName="locality">
+          </label>
+  
+          <label class="form-label">
+            Country:
+            <input class="form-control" type="text" formControlName="country" pattern="[A-Z]{2}">
+          </label>
+        </fieldset>
+  
+        <label class="form-label">
+          Email:
+          <input class="form-control" type="email" formControlName="email">
+        </label>
+  
+        <label class="form-label">
+          Mobile Phone Number:
+          <input class="form-control" type="text" formControlName="mobilePhoneNumber">
+        </label>
+      </fieldset>
+      <fieldset formGroupName="openingDaysHours">
+        <legend>Opening Days Hours</legend>
+        <label class="form-label">
+          Day Of The Week:
+          <select class="form-select" formControlName="dayOfTheWeek">
+            <option selected value="MONDAY">MONDAY</option>
+            <option value="TUESDAY">TUESDAY</option>
+            <option value="WEDNESDAY">WEDNESDAY</option>
+            <option value="THURSDAY">THURSDAY</option>
+            <option value="FRIDAY">FRIDAY</option>
+            <option value="SATURDAY">SATURDAY</option>
+            <option value="SUNDAY">SUNDAY</option>
+          </select>
+        </label>
+  
+        <label class="form-label">
+          Hour Periods:
+          <input class="form-control" type="text" formControlName="hourPeriods"
+                 pattern="T[0-2]{2}:[0-6]{2}\/T[0-2]{2}:[0-6]{2}">
+        </label>
+      </fieldset>
+  
+      <label class="form-label">
+        Services:
+        <input class="form-control" type="text" formControlName="services">
+      </label>
+  
+      <div class="form-check">
+        <label class="form-check-label">Is Auto Assignable:
+          <input class="form-check-input" type="checkbox" formControlName="isAutoAssignable">
+        </label>
+      </div>
+  
+      <fieldset formGroupName="ranking">
+        <legend>Rating</legend>
+        <label class="form-label">
+          Rating:
+          <input class="form-control" type="number" formControlName="rating">
+        </label>
+      </fieldset>
+  
+      <button type="submit" class="btn btn-info">Create A provider</button>
+    </form>
+  </div>
+  
